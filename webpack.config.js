@@ -12,6 +12,7 @@ const webpack = require('webpack');
         exclude: Não quero que ele leia os arquivos daqui
         query: O que ele deve interpretar   
             presets: O que ele vai aplicar para fazer a tradução
+            plugins: Definir algum plugins para alguma interpretação em especial
 
 */
 
@@ -32,7 +33,8 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015']
+                    presets: ['es2015'],
+                    plugins: ['transform-object-rest-spread']
                 }
             }
         ]
